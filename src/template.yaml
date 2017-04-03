@@ -1,26 +1,23 @@
 # Create component
 
 # https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes
-rcls:
-  description: Create a React ES2015 class
+rcc:
+  description: Create a React ES6 class
   tpl: |
-    import React, {
-      Component,
-      PropTypes,
-    } from 'react';
+    import React, { Component, PropTypes } from 'react';
 
     class $COMPONENT$ extends Component {
       render() {
         return (
           <div>$END$</div>
-        );
+        )
       }
     }
 
-    $COMPONENT$.propTypes = {};
-    $COMPONENT$.defaultProps = {};
+    $COMPONENT$.propTypes = {}
+    $COMPONENT$.defaultProps = {}
 
-    export default $COMPONENT$;
+    export default $COMPONENT$
 
   variables:
     - {name: 'COMPONENT', expression: 'fileNameWithoutExtension()'}
@@ -31,135 +28,36 @@ rcls:
 # @see https://facebook.github.io/react/blog/2015/09/10/react-v0.14-rc1.html#stateless-function-components
 rpfc:
   description: Create a pure function component
-  tpl:
-    next: |
-      import React, {
-        PropTypes,
-      } from 'react';
-
-      function $COMPONENT$($PARAMETER$) {
-        return (
-          <div>$END$</div>
-        );
-      }
-
-      $COMPONENT$.propTypes = {};
-      $COMPONENT$.defaultProps = {};
-
-      export default $COMPONENT$;
-
-    es5: |
-      'use strict';
-
-      var React = require('react');
-      var PropTypes = React.PropTypes;
-
-      function $COMPONENT$($PARAMETER$) {
-        return (
-          <div>$END$</div>
-        );
-      }
-
-      $COMPONENT$.propTypes = {};
-      $COMPONENT$.defaultProps = {};
-
-      module.exports = $COMPONENT$;
-
-  variables:
-    - {name: 'COMPONENT', expression: 'fileNameWithoutExtension()'}
-    - {name: 'PARAMETER', defaultValue: '&quot;props&quot;'}
-
-rpfcaf:
-  description: Create a pure function component using arrow function
   tpl: |
-    import React, {
-      PropTypes,
-    } from 'react';
+      import React, { PropTypes } from 'react'
 
-    const $COMPONENT$ = ($PARAMETER$) => {
-      return (
-        <div>$END$</div>
-      );
-    };
+      const $COMPONENT$ = ($PARAMETER$) => {
+        return (
+          <div>$END$</div>
+        )
+      }
 
-    $COMPONENT$.propTypes = {};
-    $COMPONENT$.defaultProps = {};
+      $COMPONENT$.propTypes = {}
+      $COMPONENT$.defaultProps = {}
 
-    export default $COMPONENT$;
+      export default $COMPONENT$
 
   variables:
     - {name: 'COMPONENT', expression: 'fileNameWithoutExtension()'}
     - {name: 'PARAMETER', defaultValue: '&quot;props&quot;'}
-
-rcc:
-  description: Create a React.js component
-  tpl:
-    next: |
-      import React, {
-        PropTypes,
-      } from 'react';
-
-      const $COMPONENT$ = React.createClass({
-        render() {
-          return (
-            <div>$END$</div>
-          );
-        }
-      });
-
-      export default $COMPONENT$;
-
-    es5: |
-      'use strict';
-
-      var React = require('react');
-      var PropTypes = React.PropTypes;
-
-      var $COMPONENT$ = React.createClass({
-        render: function() {
-          return (
-            <div>$END$</div>
-          );
-        }
-      });
-
-      module.exports = $COMPONENT$;
-
-  variables:
-    - {name: 'COMPONENT', expression: 'fileNameWithoutExtension()'}
 
 # Import react-dom
 rdom:
   description: import ReactDOM
-  tpl:
-    next: |
+  tpl: |
       import ReactDOM from 'react-dom';
       $END$
-
-    es5: |
-      var ReactDOM = require('react-dom');
-      $END$
-
-# Nested component
-rccc:
-  description: Create a sub component
-  tpl: |
-    $START$ = React.createClass({
-      render: function() {
-        return (
-          $END$
-        );
-      }
-    });
-
-  variables:
-    - {name: 'START'}
 
 # cdm
 cdm:
   description: componentDidMount
   tpl: |
-    componentDidMount: function() {
+    componentDidMount() {
       $END$
     },
 
@@ -167,92 +65,41 @@ cdm:
 cdu:
   description: componentDidUpdate
   tpl: |
-    componentDidUpdate: function(prevProps, prevState, prevContext) {
+    componentDidUpdate(prevProps, prevState) {
       $END$
-    },
+    }
 
 # cwm
 cwm:
   description: componentWillMount
   tpl: |
-    componentWillMount: function() {
+    componentWillMount() {
       $END$
-    },
+    }
 
 # cwr
 cwr:
   description: componentWillReceiveProps
   tpl: |
-    componentWillReceiveProps: function(nextProps, nextContext) {
+    componentWillReceiveProps(nextProps, nextContext) {
       $END$
-    },
+    }
 
 #cwu
 cwu:
   description: componentWillUpdate
   tpl: |
-    componentWillUpdate: function(nextProps, nextState, nextContext) {
+    componentWillUpdate(nextProps, nextState) {
       $END$
-    },
+    }
 
 #cwum
 cwum:
   description: componentWillUnmount
   tpl: |
-    componentWillUnmount: function() {
+    componentWillUnmount() {
       $END$
-    },
-
-# displayName
-dn:
-  description: displayName
-  tpl: "displayName: '$END$',"
-
-dnp:
-  description: displayName as a property
-  tpl: "$START$.displayName = '$END$';"
-  variables:
-    - {name: 'START'}
-
-# ReactDOM.findDOMNode
-fdn:
-  description: findDOMNode
-  tpl: findDOMNode($END$);
-
-rfdn:
-  description: ReactDOM.findDOMNode
-  tpl: ReactDOM.findDOMNode($END$);
-
-fup:
-  description: forceUpdate();
-  tpl: forceUpdate($END$);
-
-#gdp
-gdp:
-  description: getDefaultProps
-  tpl: |
-    getDefaultProps: function() {
-      return {
-        $END$
-      };
-    },
-
-# getInitialState
-gis:
-  description: getInitialState
-  tpl: |
-    getInitialState: function() {
-      return {
-        $START$: $END$
-      };
-    },
-
-  variables:
-    - {name: 'START'}
-
-# isMounted
-ism:
-  tpl: isMounted()
+    }
 
 #
 props:
@@ -263,17 +110,6 @@ dsih:
   description: dangerouslySetInnerHTML
   tpl: "dangerouslySetInnerHTML={{__html: '$END$'}}"
 
-# propTypes
-pts:
-  description: propTypes
-  tpl: |
-    propTypes: {
-      $START$: PropTypes.$END$,
-    },
-
-  variables:
-    - {name: 'START'}
-
 # PropType
 pt:
   description: PropTypes.
@@ -281,139 +117,39 @@ pt:
   variables:
     - {name: 'START'}
 
-refs:
-  tpl: this.refs.$END$
-
 # render
 ren:
   description: render()
   tpl: |
-    render: function() {
+    render() {
       return (
         <div>$END$</div>
-      );
+      )
     }
 
 # shouldComponentUpdate
 scu:
   description: shouldComponentUpdate
   tpl: |
-    shouldComponentUpdate: function(nextProps, nextState, nextContext) {
+    shouldComponentUpdate(nextProps, nextState) {
       $END$
-    },
+    }
 
 # sst
 sst:
   description: this.setState
   tpl: |
-    this.setState({
-      $START$: $END$,
-    });
-  variables:
-    - {name: 'START'}
-
-#
-state:
-  tpl: this.state.$END$
-
-# context
-ct:
-  description: contextTypes
-  tpl: |
-    contextTypes: {
-      $START$: PropTypes.$END$,
-    },
-
-  variables:
-    - {name: 'START'}
-
-# childContextTypes
-cct:
-  description: childContextTypes
-  tpl: |
-    childContextTypes: {
-      $START$: PropTypes.$END$,
-    },
-
-  variables:
-    - {name: 'START'}
-
-# this.context
-ctx:
-  description: this.context
-  tpl: this.context.$END$
-
-# getChildContext
-gcc:
-  description: getChildContext
-  tpl: |
-    getChildContext: function() {
-      return {
-        $START$: $END$
-      };
-    },
-
-  variables:
-    - {name: 'START'}
-
-
-# static
-# https://babeljs.io/blog/2015/06/07/react-on-es6-plus
-# https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#es7-property-initializers
-# static propTypes
-sdn:
-  description: static displayName
-  tpl: static displayName = '$END$';
-
-spt:
-  description: static propTypes
-  tpl: |
-    static propTypes = {
-      $START$: PropTypes.$END$,
-    };
-
-  variables:
-    - {name: 'START'}
-
-# static defaultProps
-sdp:
-  description: static defaultProps
-  tpl: |
-    static defaultProps = {
-      $START$: $END$,
-    };
-
-  variables:
-    - {name: 'START'}
-
-# static context
-sct:
-  description: static contextTypes
-  tpl: |
-    static contextTypes = {
-      $START$: PropTypes.$END$,
-    };
-
-  variables:
-    - {name: 'START'}
-
-# static childContextTypes
-scct:
-  description: static childContextTypes
-  tpl: |
-    static childContextTypes = {
-      $START$: PropTypes.$END$,
-    };
-
+    this.setState({ $START$: $END$ })
   variables:
     - {name: 'START'}
 
 # constructor
 cstt:
-  description: constructor(props, context)
+  description: constructor(props)
   tpl: |
-    constructor(props, context$START$) {
-      super(props, context$END$);
+    constructor(props) {
+      super(props)
+      $END$
     }
 
   variables:

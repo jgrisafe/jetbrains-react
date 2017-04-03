@@ -37,126 +37,41 @@ For example, to create a new React class, type `rcc` and press `Tab` or press `C
 **Documentation of available snippets:**
 
 <!--DOC_START-->
-### `rcls`
+### `rcc`
 
 ```js
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class $COMPONENT$ extends Component {
   render() {
     return (
       <div>$END$</div>
-    );
+    )
   }
 }
 
-$COMPONENT$.propTypes = {};
-$COMPONENT$.defaultProps = {};
+$COMPONENT$.propTypes = {}
+$COMPONENT$.defaultProps = {}
 
-export default $COMPONENT$;
+export default $COMPONENT$
 
 ```
 
 ### `rpfc`
 
 ```js
-import React, {
-  PropTypes,
-} from 'react';
-
-function $COMPONENT$($PARAMETER$) {
-  return (
-    <div>$END$</div>
-  );
-}
-
-$COMPONENT$.propTypes = {};
-$COMPONENT$.defaultProps = {};
-
-export default $COMPONENT$;
-
-```
-
-### `rpfc5`
-
-```js
-'use strict';
-
-var React = require('react');
-var PropTypes = React.PropTypes;
-
-function $COMPONENT$($PARAMETER$) {
-  return (
-    <div>$END$</div>
-  );
-}
-
-$COMPONENT$.propTypes = {};
-$COMPONENT$.defaultProps = {};
-
-module.exports = $COMPONENT$;
-
-```
-
-### `rpfcaf`
-
-```js
-import React, {
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react'
 
 const $COMPONENT$ = ($PARAMETER$) => {
   return (
     <div>$END$</div>
-  );
-};
+  )
+}
 
-$COMPONENT$.propTypes = {};
-$COMPONENT$.defaultProps = {};
+$COMPONENT$.propTypes = {}
+$COMPONENT$.defaultProps = {}
 
-export default $COMPONENT$;
-
-```
-
-### `rcc`
-
-```js
-import React, {
-  PropTypes,
-} from 'react';
-
-const $COMPONENT$ = React.createClass({
-  render() {
-    return (
-      <div>$END$</div>
-    );
-  }
-});
-
-export default $COMPONENT$;
-
-```
-
-### `rcc5`
-
-```js
-'use strict';
-
-var React = require('react');
-var PropTypes = React.PropTypes;
-
-var $COMPONENT$ = React.createClass({
-  render: function() {
-    return (
-      <div>$END$</div>
-    );
-  }
-});
-
-module.exports = $COMPONENT$;
+export default $COMPONENT$
 
 ```
 
@@ -168,53 +83,10 @@ $END$
 
 ```
 
-### `rdom5`
-
-```js
-var ReactDOM = require('react-dom');
-$END$
-
-```
-
-### `rccc`
-
-```js
-$START$ = React.createClass({
-  render() {
-    return (
-      $END$
-    );
-  }
-});
-
-```
-
-### `rccc5`
-
-```js
-$START$ = React.createClass({
-  render: function() {
-    return (
-      $END$
-    );
-  }
-});
-
-```
-
 ### `cdm`
 
 ```js
 componentDidMount() {
-  $END$
-}
-
-```
-
-### `cdm5`
-
-```js
-componentDidMount: function() {
   $END$
 },
 
@@ -223,18 +95,9 @@ componentDidMount: function() {
 ### `cdu`
 
 ```js
-componentDidUpdate(prevProps, prevState, prevContext) {
+componentDidUpdate(prevProps, prevState) {
   $END$
 }
-
-```
-
-### `cdu5`
-
-```js
-componentDidUpdate: function(prevProps, prevState, prevContext) {
-  $END$
-},
 
 ```
 
@@ -247,15 +110,6 @@ componentWillMount() {
 
 ```
 
-### `cwm5`
-
-```js
-componentWillMount: function() {
-  $END$
-},
-
-```
-
 ### `cwr`
 
 ```js
@@ -265,30 +119,12 @@ componentWillReceiveProps(nextProps, nextContext) {
 
 ```
 
-### `cwr5`
-
-```js
-componentWillReceiveProps: function(nextProps, nextContext) {
-  $END$
-},
-
-```
-
 ### `cwu`
 
 ```js
-componentWillUpdate(nextProps, nextState, nextContext) {
+componentWillUpdate(nextProps, nextState) {
   $END$
 }
-
-```
-
-### `cwu5`
-
-```js
-componentWillUpdate: function(nextProps, nextState, nextContext) {
-  $END$
-},
 
 ```
 
@@ -299,95 +135,6 @@ componentWillUnmount() {
   $END$
 }
 
-```
-
-### `cwum5`
-
-```js
-componentWillUnmount: function() {
-  $END$
-},
-
-```
-
-### `dn`
-
-```js
-displayName: '$END$',
-```
-
-### `dnp`
-
-```js
-$START$.displayName = '$END$';
-```
-
-### `fdn`
-
-```js
-findDOMNode($END$);
-```
-
-### `rfdn`
-
-```js
-ReactDOM.findDOMNode($END$);
-```
-
-### `fup`
-
-```js
-forceUpdate($END$);
-```
-
-### `gdp`
-
-```js
-getDefaultProps() {
-  return {
-    $END$
-  };
-}
-
-```
-
-### `gdp5`
-
-```js
-getDefaultProps: function() {
-  return {
-    $END$
-  };
-},
-
-```
-
-### `gis`
-
-```js
-getInitialState() {
-  return {
-    $START$: $END$
-  };
-}
-
-```
-
-### `gis5`
-
-```js
-getInitialState: function() {
-  return {
-    $START$: $END$
-  };
-},
-
-```
-
-### `ism`
-
-```js
-isMounted()
 ```
 
 ### `props`
@@ -402,25 +149,10 @@ this.props
 dangerouslySetInnerHTML={{__html: '$END$'}}
 ```
 
-### `pts`
-
-```js
-propTypes: {
-  $START$: PropTypes.$END$,
-},
-
-```
-
 ### `pt`
 
 ```js
 $START$: PropTypes.$END$,
-```
-
-### `refs`
-
-```js
-this.refs.$END$
 ```
 
 ### `ren`
@@ -429,18 +161,7 @@ this.refs.$END$
 render() {
   return (
     <div>$END$</div>
-  );
-}
-
-```
-
-### `ren5`
-
-```js
-render: function() {
-  return (
-    <div>$END$</div>
-  );
+  )
 }
 
 ```
@@ -448,129 +169,25 @@ render: function() {
 ### `scu`
 
 ```js
-shouldComponentUpdate(nextProps, nextState, nextContext) {
+shouldComponentUpdate(nextProps, nextState) {
   $END$
 }
-
-```
-
-### `scu5`
-
-```js
-shouldComponentUpdate: function(nextProps, nextState, nextContext) {
-  $END$
-},
 
 ```
 
 ### `sst`
 
 ```js
-this.setState({
-  $START$: $END$,
-});
-
-```
-
-### `state`
-
-```js
-this.state.$END$
-```
-
-### `ct`
-
-```js
-contextTypes: {
-  $START$: PropTypes.$END$,
-},
-
-```
-
-### `cct`
-
-```js
-childContextTypes: {
-  $START$: PropTypes.$END$,
-},
-
-```
-
-### `ctx`
-
-```js
-this.context.$END$
-```
-
-### `gcc`
-
-```js
-getChildContext() {
-  return {
-    $START$: $END$
-  };
-}
-
-```
-
-### `gcc5`
-
-```js
-getChildContext: function() {
-  return {
-    $START$: $END$
-  };
-},
-
-```
-
-### `sdn`
-
-```js
-static displayName = '$END$';
-```
-
-### `spt`
-
-```js
-static propTypes = {
-  $START$: PropTypes.$END$,
-};
-
-```
-
-### `sdp`
-
-```js
-static defaultProps = {
-  $START$: $END$,
-};
-
-```
-
-### `sct`
-
-```js
-static contextTypes = {
-  $START$: PropTypes.$END$,
-};
-
-```
-
-### `scct`
-
-```js
-static childContextTypes = {
-  $START$: PropTypes.$END$,
-};
+this.setState({ $START$: $END$ })
 
 ```
 
 ### `cstt`
 
 ```js
-constructor(props, context$START$) {
-  super(props, context$END$);
+constructor(props) {
+  super(props)
+  $END$
 }
 
 ```
