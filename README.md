@@ -88,7 +88,7 @@ $END$
 ```js
 componentDidMount() {
   $END$
-},
+}
 
 ```
 

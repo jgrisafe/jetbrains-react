@@ -59,7 +59,7 @@ cdm:
   tpl: |
     componentDidMount() {
       $END$
-    },
+    }
 
 # cdu
 cdu:

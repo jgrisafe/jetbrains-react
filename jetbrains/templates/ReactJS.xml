@@ -43,7 +43,7 @@
   </template>
   <template
       name="cdm"
-      value="componentDidMount() {&#10;  $END$&#10;},&#10;"
+      value="componentDidMount() {&#10;  $END$&#10;}&#10;"
       description="React: componentDidMount"
       toReformat="true"
       toShortenFQNames="true">
